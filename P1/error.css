@@ -1,0 +1,10 @@
+/*fichero para estilo de la página de error*/
+.error{
+    display: flex; /* Establecer como flex container */
+    flex-direction: column; /* Para colocar los elementos uno debajo del otro */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    padding: 20px; /* Padding entre los elementos */
+    text-align: center; /* Centrar el texto */
+    overflow: hidden; /* Para ocular todo el alineamieto duera del contenedor */
+     
+}

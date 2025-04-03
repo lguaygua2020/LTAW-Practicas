@@ -1,0 +1,28 @@
+/*hoja de estilo*/
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: rgb(228, 228, 228);
+    margin: 0;
+    padding: 0;
+}
+
+/* portada */
+.contenedor {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 60px;
+}
+
+h1 {
+    font-family: "Barriecito", system-ui;    background-color: rgb(198, 171, 71);
+    box-shadow: 0 2px 4px rgb(2, 4, 10);
+    padding: 20px 0;
+    font-size: 80px;
+    color: rgb(229, 202, 24);
+}
+
+  

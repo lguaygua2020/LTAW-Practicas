@@ -8,12 +8,13 @@
  
  body {
     font-family: sans-serif;
-    padding: 90px 20px 0;   /* Padding para que no se junte el body con la barra de navegación y no se pegue a los bordes */
- }
+    padding: 100px 20px 0;   /* Padding para que no se junte el body con la barra de navegación y no se pegue a los bordes */
+ } 
+
 /* Cabecera */
 .header {
     background-color: #70c7e9;
-    height: 70px;
+    height: 90px;
     position: fixed;  /* Para que se quede fijo si hago scroll */
     width: 100%;
     top: 0;
@@ -30,7 +31,26 @@
     /* margin: 0 auto; */
  }
  
+ .logo-img {
+    max-width: 100px; /* Ajusta el valor según lo necesites */
+    max-height: 100px; /* Ajusta el valor según lo necesites */
+    vertical-align: middle; /* Para alinear verticalmente la imagen con el texto */
+ }
+ .store-name {
+    margin-left: 10px; /* Espacio entre la imagen y el texto */
+ }
+.name {
+    color: rgb(18, 169, 189);
+    font-size: 60px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+    text-decoration: none;
+    font-family: "Barriecito", system-ui;    
 
+    display: flex; /* Establecer como flex container */
+    align-items: center; /* Centrar verticalmente los elementos hijos */
+}
 .error{
     display: flex; /* Establecer como flex container */
     flex-direction: column; /* Para colocar los elementos uno debajo del otro */
@@ -42,7 +62,7 @@
 }
 .error img {
     width: 100%;
-    max-width: 500px; /* Limita el tamaño máximo */
+    max-width: 525px; /* Limita el tamaño máximo */
     height: auto;
 }
 

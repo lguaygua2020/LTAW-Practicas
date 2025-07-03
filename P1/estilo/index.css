@@ -1,0 +1,104 @@
+/*hoja de estilo*/
+  body {
+    background-color: rgb(228, 228, 228);
+    margin: 0;
+    padding: 0;
+}
+
+/* portada */
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #00FFF7;
+    text-shadow: 0 0 5px #00FFF7, 0 0 10px #00FFF7;
+}
+
+/* Cabecera */
+.header {
+    background-color: #19eaee;
+    height: 80px;
+    position: fixed;  /* Para que se quede fijo si hago scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+ }
+
+ /* Barra superior */
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002a59;
+    color: white;
+    padding: 5px 60px;
+    flex-wrap: wrap;
+    
+}
+.barra-superior h1 {
+    color: rgb(0, 155, 166);
+   font-size: 75px;
+}
+
+.barra-superior .acciones a {
+    background-color: #000062; 
+    color: #00abce; 
+    border: 2px solid #00b2c9; 
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    appearance: none; 
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+
+
+.barra-superior .acciones a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sección de productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+}
+.producto {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.producto img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #00FFF7;
+}
+
+.producto h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: rgb(18, 169, 189);;
+}
+
+.producto a {
+    color: #00FFF7;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.producto a:hover {
+    text-decoration: underline;
+    color: #ba3bff;
+}

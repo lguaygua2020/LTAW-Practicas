@@ -1,0 +1,103 @@
+body {
+    background-color: rgb(228, 228, 228);
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #00FFF7;
+    text-shadow: 0 0 5px #00FFF7, 0 0 10px #00FFF7;
+}
+.header {
+    background-color: #19eaee;
+    height: 80px;
+    position: fixed;  /* Para que se quede fijo si hago scroll */
+    width: 100%;
+    top: 0;
+    left: 0;
+ }
+
+/* Nombre del producto */
+.nombre-producto {
+    font-size: 40px;
+    color: #000000;
+    margin: 20px;
+    text-align: center;
+}
+
+ /* Barra superior */
+ .barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #002a59;
+    color: white;
+    padding: 5px 60px;
+    flex-wrap: wrap;
+    
+}
+.barra-superior h1 {
+    color: rgb(0, 155, 166);
+   font-size: 75px;
+}
+
+.barra-superior .acciones a {
+    background-color: #000062; 
+    color: #00abce; 
+    border: 2px solid #00b2c9; 
+    padding: 8px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    appearance: none; 
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.barra-superior .acciones a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.error_404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    text-align: center;
+    color: #ff0000;
+    text-shadow: 0px 0px 10px #ff0000;
+}
+
+.error-content img {
+    width: 300px;
+    filter: drop-shadow(0px 0px 15px #ff0000);
+}
+
+.error-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.error-text p {
+    font-size: 20px;
+    color: #ffffff;
+}
+.error-text button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.3s;
+}
+
+.error-text button:hover {
+    background-color: #cc0000;
+    box-shadow: 0px 0px 15px #ff0000;
+}

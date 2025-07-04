@@ -12,9 +12,13 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
-
+const electron = require('electron');   //módulo de electron
+const ip = require('ip');   //módulo de ip
 //-- Puerto de escucha del servidor
 const PUERTO = 9090;
+
+//-- Dirección del chat
+const dirección_ip = `${ip.address()}:${PUERTO}`;
 
 //-- Crear una nueva aplicación web
 const app = express();
@@ -124,7 +128,54 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('stopTyping', username);
     });
 });
+//------------------- ELECTRON
+console.log("Arrancando electron...");
 
+//-- Variable para acceder a la ventana principal
+//-- Se pone aquí para que sea global al módulo principal
+let win = null;
+
+//-- Punto de entrada. En cuanto electron está listo,
+//-- ejecuta esta función
+electron.app.on('ready', () => {
+    console.log("Evento Ready!");
+
+    //-- Crear la ventana principal de nuestra aplicación
+    win = new electron.BrowserWindow({
+        width: 1200,   //-- Anchura 
+        height: 800,  //-- Altura
+
+        //-- Permitir que la ventana tenga ACCESO AL SISTEMA
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+    });
+
+    //-- En la parte superior se nos ha creado el menu
+    //-- por defecto
+    //-- Si lo queremos quitar, hay que añadir esta línea
+    win.setMenuBarVisibility(false)
+
+    //-- Cargar interfaz gráfica en HTML
+    win.loadFile("public/index.html");
+
+    //-- Esperar a que la página se cargue y se muestre
+    //-- y luego enviar el mensaje al proceso de renderizado para que 
+    //-- lo saque por la interfaz gráfica
+    win.on('ready-to-show', () => {
+        // win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+        win.webContents.send('lista_usuarios', count);
+        win.webContents.send('ip', dirección_ip);
+    });
+});
+
+//-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
+//-- renderizado. Al recibirlos se escribe una cadena en la consola
+electron.ipcMain.handle('test', (event, message) => {
+    console.log("-> Mensaje: " + message);
+    io.send(message);   //-- Mensaje desde el servidor a todos los clientes
+});
 //-- Lanzar el servidor HTTP
 //-- ¡Que empiecen los juegos de los WebSockets!
 server.listen(PUERTO);
